@@ -1,16 +1,19 @@
 #include "DynamicStack.cpp"
 #include "QueueFromStack.cpp"
 #include "StaticStack.cpp"
+#include "StaticQueue.cpp"
 
 void testDynamicStack();
 void testQueueFromStack();
 void testStaticStack();
+void testStaticQueue();
 
 int main(int argc, char **argv) {
 
 //	testQueueFromStack();
 //	testDynamicStack();
-	testStaticStack();
+//	testStaticStack();
+	testStaticQueue();
 
 	return 0;
 }
@@ -75,5 +78,26 @@ void testStaticStack() {
 	for (int i = 0; i < 10; i++) {
 		stack.pop();
 		stack.print("pop");
+	}
+}
+
+void testStaticQueue() {
+	// testing Static Queue
+	StaticQueue<int> queue;
+
+	for (int i = 0; i < 10; i++) {
+		queue.add(i);
+		queue.print("add");
+		if (i == 0 || i == 4) {
+			// testing clear
+			queue.clear();
+			queue.print("clear");
+		}
+	}
+
+	// testing pop
+	for (int i = 0; i < 10; i++) {
+		queue.next();
+		queue.print("next");
 	}
 }

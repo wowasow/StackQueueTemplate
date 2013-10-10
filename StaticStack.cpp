@@ -16,18 +16,21 @@
 #include <cstdio>
 
 template<class T>
+const int StaticStack<T>::DEFAULT_SIZE = 10;
+
+template<class T>
 StaticStack<T>::StaticStack() {
-	stack = new T[10];
+	stack = new T[DEFAULT_SIZE];
 	size = 10;
 	top = -1;
 }
 
 template<class T>
 StaticStack<T>::StaticStack(int size) {
-	this->size = size;
-	if (this->size > 0) {
+	if (size > 0) {
 		stack = new T[size];
 		top = -1;
+		this->size = size;
 	} else {
 		fprintf(stderr, "ERROR! Size of a stack must be a positive number.\n");
 	}
@@ -35,12 +38,10 @@ StaticStack<T>::StaticStack(int size) {
 
 template<class T>
 StaticStack<T>::~StaticStack() {
-	if (size > 0) {
-		delete stack;
+		delete [] stack;
 		stack = 0;
 		top = -1;
 		size = 0;
-	}
 }
 
 template<class T>

@@ -41,6 +41,8 @@ private:
 
 	int top;
 	int size;
+
+	const static int DEFAULT_SIZE;
 };
 
 #endif /* STACK_H_ */
