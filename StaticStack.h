@@ -5,14 +5,15 @@
  *      Author: Wojciech Wrzalik
  */
 
-#ifndef DYNAMIC_STACK_H_
-#define DYNAMIC_STACK_H_
+#ifndef STATIC_STACK_H_
+#define STATIC_STACK_H_
 
 template<class T>
-class DynamicStack {
+class StaticStack {
 public:
-	DynamicStack();
-	virtual ~DynamicStack();
+	StaticStack();
+	StaticStack(int size);
+	virtual ~StaticStack();
 
 	// pushes data on the stack
 	void push(T data);
@@ -36,12 +37,10 @@ public:
 	void print(const char * msg);
 
 private:
-	struct Element {
-		T data;
-		Element * next;
-	};
+	T * stack;
 
-	Element * top;
+	int top;
+	int size;
 };
 
 #endif /* STACK_H_ */

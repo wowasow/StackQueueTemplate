@@ -6,8 +6,8 @@
  *      Author: Wojciech Wrzalik
  */
 
-#ifndef _STACK_CPP_
-#define _STACK_CPP_
+#ifndef _DYNAMIC_STACK_CPP_
+#define _DYNAMIC_STACK_CPP_
 
 #include "DynamicStack.h"
 #include <cstdlib>
@@ -97,7 +97,7 @@ void DynamicStack<T>::print(const char * msg) {
 	Element * tmp = top;
 
 	std::cout << "*** " << msg << " ***" << std::endl;
-	std::cout << "Stack: ";
+	std::cout << "DynamicStack: ";
 
 	while (tmp) {
 		std::cout << tmp->data;
