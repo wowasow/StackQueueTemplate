@@ -9,24 +9,24 @@
 #ifndef _STACK_CPP_
 #define _STACK_CPP_
 
-#include "Stack.h"
+#include "DynamicStack.h"
 #include <cstdlib>
 #include <iostream>
 
 template<class T>
-Stack<T>::Stack() {
+DynamicStack<T>::DynamicStack() {
 	top = 0;
 }
 
 template<class T>
-Stack<T>::~Stack() {
+DynamicStack<T>::~DynamicStack() {
 	if(top) {
 		this->clear();
 	}
 }
 
 template<class T>
-void Stack<T>::push(T data) {
+void DynamicStack<T>::push(T data) {
 	Element * tmp = new Element;
 
 	tmp->data = data;
@@ -36,7 +36,7 @@ void Stack<T>::push(T data) {
 }
 
 template<class T>
-T Stack<T>::pop() {
+T DynamicStack<T>::pop() {
 	if (top) {
 		Element tmp = *top;
 		delete top;
@@ -54,7 +54,7 @@ T Stack<T>::pop() {
 }
 
 template<class T>
-T Stack<T>::topElem() {
+T DynamicStack<T>::topElem() {
 	if (top) {
 		return top->data;
 	}
@@ -63,13 +63,13 @@ T Stack<T>::topElem() {
 }
 
 template<class T>
-bool Stack<T>::isEmpty() {
+bool DynamicStack<T>::isEmpty() {
 	bool out = top ? 0 : 1;
 	return out;
 }
 
 template<class T>
-void Stack<T>::clear() {
+void DynamicStack<T>::clear() {
 	Element * tmp = top;
 
 	while (tmp) {
@@ -80,7 +80,7 @@ void Stack<T>::clear() {
 }
 
 template<class T>
-int Stack<T>::count() {
+int DynamicStack<T>::count() {
 	Element * tmp = top;
 	int counter = 0;
 
@@ -93,7 +93,7 @@ int Stack<T>::count() {
 }
 
 template<class T>
-void Stack<T>::print(const char * msg) {
+void DynamicStack<T>::print(const char * msg) {
 	Element * tmp = top;
 
 	std::cout << "*** " << msg << " ***" << std::endl;

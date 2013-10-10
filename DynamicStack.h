@@ -9,10 +9,10 @@
 #define STACK_H_
 
 template<class T>
-class Stack {
+class DynamicStack {
 public:
-	Stack();
-	virtual ~Stack();
+	DynamicStack();
+	virtual ~DynamicStack();
 
 	// pushes data on the stack
 	void push(T data);

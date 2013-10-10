@@ -1,7 +1,7 @@
-#include "Stack.cpp"
+#include "DynamicStack.cpp"
 #include "QueueFromStack.cpp"
 
-void testStack();
+void testDynamicStack();
 void testQueueFromStack();
 
 int main(int argc, char **argv) {
@@ -12,8 +12,8 @@ int main(int argc, char **argv) {
 	return 0;
 }
 
-void testStack() {
-	Stack<int> stack;
+void testDynamicStack() {
+	DynamicStack<int> stack;
 
 	// testing push
 	for (int i = 0; i < 10; i++) {

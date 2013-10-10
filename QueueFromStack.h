@@ -9,7 +9,7 @@
 #ifndef QUEUEFROMSTACK_H_
 #define QUEUEFROMSTACK_H_
 
-#include "Stack.cpp"
+#include "DynamicStack.cpp"
 
 template<class T>
 class QueueFromStack {
@@ -39,8 +39,8 @@ public:
 	void print(const char * msg);
 
 private:
-	Stack<T> helper;
-	Stack<T> tail;
+	DynamicStack<T> helper;
+	DynamicStack<T> tail;
 };
 
 #endif /* QUEUEFROMSTACK_H_ */
