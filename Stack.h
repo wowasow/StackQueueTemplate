@@ -2,39 +2,38 @@
  * Stack.h
  *
  *  Created on: Oct 9, 2013
- *      Author: wowas
+ *      Author: Wojciech Wrzalik
  */
 
 #ifndef STACK_H_
 #define STACK_H_
 
-template <class T>
+template<class T>
 class Stack {
 public:
 	Stack();
 	virtual ~Stack();
 
-	// push data on the stack
+	// pushes data on the stack
 	void push(T data);
 
-	// pop data of the stack
+	// pops data of the stack
 	T pop();
 
-	// show the top element
+	// shows the top element
 	T topElem();
 
-	// tell if the stack is empty
+	// tells if the stack is empty
 	bool isEmpty();
 
-	// erase all stack elements
+	// erases all stack elements
 	void clear();
 
-	// count the elements(return a size variable)
+	// counts the elements(return a size variable)
 	int count();
 
 	// prints the stack elements
 	void print(const char * msg);
-
 
 private:
 	struct Element {

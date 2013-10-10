@@ -1,9 +1,13 @@
 /*
+
  * Stack.cpp
  *
  *  Created on: Oct 9, 2013
- *      Author: wowas
+ *      Author: Wojciech Wrzalik
  */
+
+#ifndef _STACK_CPP_
+#define _STACK_CPP_
 
 #include "Stack.h"
 #include <cstdlib>
@@ -16,6 +20,9 @@ Stack<T>::Stack() {
 
 template<class T>
 Stack<T>::~Stack() {
+	if(top) {
+		this->clear();
+	}
 }
 
 template<class T>
@@ -55,39 +62,41 @@ T Stack<T>::topElem() {
 	return NULL;
 }
 
-template <class T>
+template<class T>
 bool Stack<T>::isEmpty() {
 	bool out = top ? 0 : 1;
 	return out;
 }
 
-template <class T>
+template<class T>
 void Stack<T>::clear() {
 	Element * tmp = top;
 
-	while(tmp) {
+	while (tmp) {
 		top = top->next;
 		delete tmp;
 		tmp = top;
 	}
 }
 
-template <class T>
+template<class T>
 int Stack<T>::count() {
 	Element * tmp = top;
 	int counter = 0;
 
-	while(tmp) {
+	while (tmp) {
 		counter++;
 		tmp = tmp->next;
 	}
+
+	return counter;
 }
 
 template<class T>
 void Stack<T>::print(const char * msg) {
 	Element * tmp = top;
 
-	std::cout << "*** " << msg << " ***"<< std::endl;
+	std::cout << "*** " << msg << " ***" << std::endl;
 	std::cout << "Stack: ";
 
 	while (tmp) {
@@ -101,3 +110,5 @@ void Stack<T>::print(const char * msg) {
 	std::cout << "counter: " << this->count() << std::endl;
 	std::cout << std::endl << std::endl;
 }
+
+#endif
